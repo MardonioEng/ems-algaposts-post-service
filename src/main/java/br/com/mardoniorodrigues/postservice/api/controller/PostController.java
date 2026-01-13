@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api/posts/")
+@RequestMapping("/api/posts")
 @RequiredArgsConstructor
 public class PostController {
 
-    private PostService service;
+    private final PostService service;
 
+    @PostMapping
     public ResponseEntity<PostOutput> create(@RequestBody PostInput input) {
         PostOutput output = service.create(input);
         return ResponseEntity.status(HttpStatus.CREATED).body(output);
