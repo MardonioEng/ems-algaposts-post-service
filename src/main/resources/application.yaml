@@ -1,4 +1,5 @@
 spring:
+  application.name: post-service
   rabbitmq:
     host: localhost
     port: 5672
